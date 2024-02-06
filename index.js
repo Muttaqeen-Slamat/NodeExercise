@@ -56,3 +56,16 @@ test.end();
 //         console.log('Issue when appending data to a file')
 //     }
 // }
+
+// making use of http module
+
+const http = require('http')
+const port = +process.env.PORT || 4000
+http.createServer((req,res)=>{
+    res.writeHead(200 ,{
+        'Context-type': 'text/plain'
+    })
+    res.end('Hello world')
+}).listen(port, ()=>{
+    console.log(`Server is running on: http://localhost:${port}`)
+})
